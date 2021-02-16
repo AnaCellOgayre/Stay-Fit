@@ -99,7 +99,7 @@ header{
 /* for health tips page*/
 
 .htips{
-  background-image: url(Picture1.png);
+  background-image: url(Picture2.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -115,7 +115,7 @@ header{
 }
 
 div.img {
-    height: 240px;
+    height: 250px;
     padding: 60px;
     z-index: -2;
     float: left;
