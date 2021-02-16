@@ -100,7 +100,7 @@ header{
 
 .htips{
   background-image: url(Picture6.png);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
   background-size: cover;
 }
