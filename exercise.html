@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Fit</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="exercise">
+    <header>
+        <ul class="headernav">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="htips.html" >Health Tips</a></li>
+        </ul>
+            <a href="index.html" class = "logo">STAY <br>FIT!</a>
+        <ul class="headernav">  
+            <li><a href="exercise.html" >Exercises</a></li>
+            <li><a href="contact.html" >Contact</a></li>
+        </ul>
+    </header>
+
+    <style>
+    
+    img {
+        margin: auto;
+        display: block; 
+    }
+    
+    .exercise-container {
+        margin-top: 100px;
+        position: absolute;
+
+    }
+    
+    .slideShow {
+        display: none;
+    }
+    
+    .cursor {
+        cursor: pointer;
+    }
+    
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 35%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    
+    .next {
+        right: 25%;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    .prev {
+        left: 25%;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    
+    .number {
+        color: black;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        left: 25%;
+    }
+    
+    .name {
+        margin: auto;
+        display: block;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        color: white;
+        width: 48%;
+    }
+    
+    .vertical:after {
+        position: absolute;
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .horizontal {
+        margin: auto;
+        float: left;
+        width: 12.40%;
+    }
+    
+    .demo {
+        opacity: 0.6;
+    }
+    
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+    </style>
+    <body>
+    
+    <div class="exercise-container">
+        <div class="slideShow">
+            <div class="number">1 / 8</div>
+            <img src="squat.jpg" style="width:50%; height: 50%;">
+        </div>
+        <div class="slideShow">
+            <div class="number">2 / 8</div>
+            <img src="plank.jpg" style="width:50%; height: 50%;">
+        </div>
+        <div class="slideShow">
+            <div class="number">3 / 8</div>
+            <img src="hip_rotation.jpg" style="width:50%; height: 50%;">
+        </div>
+        <div class="slideShow">
+            <div class="number">4 / 8</div>
+            <img src="bridge_posture.jpg" style="width:50%; height: 50%;">
+        </div>
+        <div class="slideShow">
+            <div class="number">5 / 8</div>
+            <img src="single_leg_stand.jpg" style="width:50%; height: 50%;">
+        </div>
+        <div class="slideShow">
+            <div class="number">6 / 8</div>
+            <img src="push_up.jpg" style="width:50%; height: 50%;">
+        </div>
+        <div class="slideShow">
+            <div class="number">7 / 8</div>
+            <img src="crunches.jpg" style="width:50%; height: 50%;">
+            </div>
+        <div class="slideShow">
+            <div class="number">8 / 8</div>
+            <img src="leg_raise.jpg" style="width:50%; height: 50%;">
+        </div> 
+    
+      <a class="prev" onclick="myslideShow(-1)">❮</a>
+      <a class="next" onclick="myslideShow(1)">❯</a>
+    
+      <div class="name">
+        <p id="names"></p>
+      </div>
+    
+      <div class="vertical">
+        <div class="horizontal">
+            <img class="demo cursor" src="squat.jpg" style="width:100%" onclick="presentSlide(1)" alt="Squat">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="plank.jpg" style="width:100%" onclick="presentSlide(2)" alt="Plank">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="hip_rotation.jpg" style="width:100%" onclick="presentSlide(3)" alt="Hip Rotation">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="bridge_posture.jpg" style="width:100%" onclick="presentSlide(4)" alt="Bridge Posture">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="single_leg_stand.jpg" style="width:100%" onclick="presentSlide(5)" alt="Single Leg Stand">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="push_up.jpg" style="width:100%" onclick="presentSlide(6)" alt="Push Up">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="crunches.jpg" style="width:100%" onclick="presentSlide(7)" alt="Crunches">
+        </div>
+        <div class="horizontal">
+            <img class="demo cursor" src="leg_raise.jpg" style="width:100%" onclick="presentSlide(8)" alt="Leg Raise">
+        </div>
+      </div>
+    </div>
+    
+    <script>
+    var slideNumber = 1;
+    Slides(slideNumber);
+    
+    function myslideShow(x) {
+      Slides(slideNumber += x);
+    }
+    
+    function presentSlide(x) {
+      Slides(slideNumber = x);
+    }
+    
+    function Slides(x) {
+      var a;
+      var slides = document.getElementsByClassName("slideShow");
+      var dots = document.getElementsByClassName("demo");
+      var namesText = document.getElementById("names");
+      if (x > slides.length) {slideNumber = 1}
+      if (x < 1) {slideNumber = slides.length}
+      for (a = 0; a < slides.length; a++) {
+          slides[a].style.display = "none";
+      }
+      for (a = 0; a < dots.length; a++) {
+          dots[a].className = dots[a].className.replace(" active", "");
+      }
+      slides[slideNumber-1].style.display = "block";
+      dots[slideNumber-1].className += " active";
+      namesText.innerHTML = dots[slideNumber-1].alt;
+    }
+    </script>
+        
+</body>
+</html>
